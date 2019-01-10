@@ -12,6 +12,7 @@ allInput.forEach(input => {
         localStorage.setItem(e.target.name, e.target.value);
         const date = new Date().toUTCString();
         localStorage.setItem('lastChange', date)
+        document.querySelector('p span').textContent = localStorage.getItem('lastChange')
     });
 })
 autofill()
