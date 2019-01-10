@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>localStorage form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <form>
+            <h2>Dane klienta</h2>
+            <label for="firstNameClient">imię:</label>
+            <input type="text" name="firstNameClient" id="firstNameClient">
+            <label for="surnameClient">nazwisko:</label>
+            <input type="text" name="surnameClient" id="surnameClient">
+            <label for="streetClient">ulica:</label>
+            <input type="text" name="streetClient" id="streetClient">
+            <label for="cityClient">miasto:</label>
+            <input type="text" name="cityClient" id="cityClient">
+            <label for="postcodeClient">kod pocztowy</label>
+            <input type="text" name="postcodeClient" id="postcodeClient">
+        </form>
+        <form>
+            <h2>Dane firmy</h2>
+            <label for="nameCompany">nazwa:</label>
+            <input type="text" name="nameCompany" id="nameCompany">
+            <label for="streetCompany">ulica:</label>
+            <input type="text" name="streetCompany" id="streetCompany">
+            <label for="cityCompany">miasto:</label>
+            <input type="text" name="cityCompany" id="cityCompany">
+            <label for="postcodeCompany">kod pocztowy</label>
+            <input type="text" name="postcodeCompany" id="postcodeCompany">
+        </form>
+        <form>
+            <label for="amount">
+                <h2>kwota:</h2>
+            </label>
+            <input type="text" name="amount" id="amount">
+        </form>
+        <div>
+            <h2>status:</h2>
+            <input type="radio" name="status" id="issued">
+            <label for="issued">wystawiona</label>
+            <input type="radio" name="status" id="delivered">
+            <label for="delivered">doręczona</label>
+            <input type="radio" name="status" id="paid">
+            <label for="paid">opłacona</label>
+            <input type="radio" name="status" id="late">
+            <label for="late">spóźniona</label>
+        </div>
+    </div>
+    <button>Zapisz</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
