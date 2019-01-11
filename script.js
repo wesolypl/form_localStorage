@@ -1,3 +1,4 @@
+//Tworzenie maski dla kodu pocztowego (target) pobiera z funkcji init
 const maskPostcode = (target) => {
     const name = document.querySelector(`#${target}`);
     name.addEventListener('keyup', () => {
@@ -6,10 +7,10 @@ const maskPostcode = (target) => {
         }
     })
     if (name.value.length === 6) {
-        addToLoacalStorage(target, name.value)
+        addToLocalStorage(target, name.value)
     }
 }
-
+//Jak wyżej tylko dla nipu
 const maskNip = () => {
     const nip = document.querySelector('#nipCompany');
     nip.addEventListener('keyup', () => {
@@ -17,26 +18,27 @@ const maskNip = () => {
             nip.value = nip.value + "-"
         }
     })
+    //żeby wielokrotnie nie wywoływać funkcji validNip warunek sprawdzający czy długość jest odpowiednia
     if (nip.value.length === 13) {
         validNip(nip)
     }
 }
-
+//Sprawdzenie czy nip jest wpisany w prawidłowej formie, jeśli tak przekazanie wartości
 const validNip = (nip) => {
     const regexp = /^\d{3}-\d{3}-\d{2}-\d{2}$/;
     if (nip.value.match(regexp)) {
-        addToLoacalStorage("nipCompany", nip.value)
+        addToLocalStorage("nipCompany", nip.value)
     }
 }
-
-const addToLoacalStorage = (target, value) => {
+//Dodanie wartości do localStorage
+const addToLocalStorage = (target, value) => {
     localStorage.setItem(target, value);
     const date = new Date().toUTCString();
     localStorage.setItem('lastChange', date)
     document.querySelector('p span').textContent = localStorage.getItem('lastChange')
 }
 
-
+//Autouzupełnienie formularza z zapisnych danych
 const autofill = (allInput) => {
     allInput.forEach(input => {
         if (input.name !== "status") {
@@ -50,7 +52,7 @@ const autofill = (allInput) => {
     document.querySelector('p span').textContent = localStorage.getItem('lastChange')
 }
 
-
+//Główna funkcja obłsugująca formularz
 const init = () => {
     const allInput = document.querySelectorAll('input');
     autofill(allInput);
@@ -59,7 +61,7 @@ const init = () => {
             if (event.target.name !== 'nipCompany' && event.target.name !== 'status' && event.target.name === "postcodeClient" && event.target.name === "postcodeCompany") {
                 const target = event.target.name;
                 const value = event.target.value;
-                addToLoacalStorage(target, value)
+                addToLocalStorage(target, value)
             } else if ((event.target.name === "postcodeClient") || (event.target.name === "postcodeCompany")) {
                 const target = event.target.name;
                 maskPostcode(target);
@@ -68,7 +70,7 @@ const init = () => {
             } else if (event.target.name === "status") {
                 const target = event.target.name;
                 const value = event.target.id;
-                addToLoacalStorage(target, value)
+                addToLocalStorage(target, value)
             }
         });
     })
