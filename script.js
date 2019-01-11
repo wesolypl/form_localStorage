@@ -58,7 +58,7 @@ const init = () => {
     autofill(allInput);
     allInput.forEach(input => {
         input.addEventListener('input', (event) => {
-            if (event.target.name !== 'nipCompany' && event.target.name !== 'status' && event.target.name === "postcodeClient" && event.target.name === "postcodeCompany") {
+            if (event.target.name !== 'nipCompany' && event.target.name !== 'status' && event.target.name !== "postcodeClient" && event.target.name !== "postcodeCompany") {
                 const target = event.target.name;
                 const value = event.target.value;
                 addToLocalStorage(target, value)
