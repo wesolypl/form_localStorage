@@ -17,7 +17,9 @@ const maskNip = () => {
             nip.value = nip.value + "-"
         }
     })
-    validNip(nip)
+    if (nip.value.length === 13) {
+        validNip(nip)
+    }
 }
 
 const validNip = (nip) => {
