@@ -11,49 +11,80 @@
 
 <body>
     <div class="wrapper">
-        <form>
+        <form class="formClient">
             <h2>Dane klienta</h2>
-            <label for="firstNameClient">imię:</label>
-            <input type="text" name="firstNameClient" id="firstNameClient">
-            <label for="surnameClient">nazwisko:</label>
-            <input type="text" name="surnameClient" id="surnameClient">
-            <label for="streetClient">ulica:</label>
-            <input type="text" name="streetClient" id="streetClient">
-            <label for="cityClient">miasto:</label>
-            <input type="text" name="cityClient" id="cityClient">
-            <label for="postcodeClient">kod pocztowy</label>
-            <input type="text" name="postcodeClient" id="postcodeClient" maxlength="6">
+            <div class="formClient__div">
+                <label class='div__label' for="firstNameClient">imię:</label>
+                <input type="text" name="firstNameClient" id="firstNameClient" class="div__input">
+            </div>
+            <div class="formClient__div">
+                <label class='div__label' for="surnameClient">nazwisko:</label>
+                <input type="text" name="surnameClient" id="surnameClient" class="div__input">
+            </div>
+            <div class="formClient__div">
+                <label class='div__label' for="streetClient">ulica:</label>
+                <input type="text" name="streetClient" id="streetClient" class="div__input">
+            </div>
+            <div class="formClient__div">
+                <label class='div__label' for="cityClient">miasto:</label>
+                <input type="text" name="cityClient" id="cityClient" class="div__input">
+            </div>
+            <div class="formClient__div">
+                <label class='div__label--postcode' for="postcodeClient">kod pocztowy:</label>
+                <input type="text" name="postcodeClient" id="postcodeClient" maxlength="6" class="div__input div__input--postcode">
+            </div>
         </form>
-        <form>
+        <form class="formCompany">
             <h2>Dane firmy</h2>
-            <label for="nameCompany">nazwa:</label>
-            <input type="text" name="nameCompany" id="nameCompany">
-            <label for="nipCompany">nip: </label>
-            <input type="text" name="nipCompany" id="nipCompany" maxlength="13">
-            <label for="streetCompany">ulica:</label>
-            <input type="text" name="streetCompany" id="streetCompany">
-            <label for="cityCompany">miasto:</label>
-            <input type="text" name="cityCompany" id="cityCompany">
-            <label for="postcodeCompany">kod pocztowy</label>
-            <input type="text" name="postcodeCompany" id="postcodeCompany" maxlength="6">
+            <div class="formCompany__div">
+                <label class='div__label' for="nameCompany">nazwa:</label>
+                <input type="text" name="nameCompany" id="nameCompany" class="div__input">
+            </div>
+            <div class="formCompany__div">
+                <label class='div__label' for="nipCompany">nip: </label>
+                <input type="text" name="nipCompany" id="nipCompany" maxlength="13" class="div__input">
+            </div>
+            <div class="formCompany__div">
+                <label class='div__label' for="streetCompany">ulica:</label>
+                <input type="text" name="streetCompany" id="streetCompany" class="div__input">
+            </div>
+            <div class="formCompany__div">
+                <label class='div__label' for="cityCompany">miasto:</label>
+                <input type="text" name="cityCompany" id="cityCompany" class="div__input">
+            </div>
+            <div class="formCompany__div">
+                <label class='div__label div__label--postcode' for="postcodeCompany">kod pocztowy:</label>
+                <input type="text" name="postcodeCompany" id="postcodeCompany" maxlength="6" class="div__input div__input--postcode">
+            </div>
         </form>
-        <form>
-            <label for="amount">
-                <h2>kwota:</h2>
+        <form class="formAmount">
+            <label for="amount" class="formAmount__label">
+                <h2>Kwota</h2>
             </label>
-            <input type="text" name="amount" id="amount">
+            <input type="text" name="amount" id="amount" class="formAmount__input">
         </form>
-        <div>
-            <h2>status:</h2>
-            <input type="radio" name="status" id="issued">
-            <label for="issued">wystawiona</label>
-            <input type="radio" name="status" id="delivered">
-            <label for="delivered">doręczona</label>
-            <input type="radio" name="status" id="paid">
-            <label for="paid">opłacona</label>
-            <input type="radio" name="status" id="late">
-            <label for="late">spóźniona</label>
-            <p>Ostatnia zmiana: <span></span></p>
+        <div class="formStatus">
+            <h2>Status</h2>
+            <div class="formStatus__div">
+                <input type="radio" name="status" id="issued" class="formStatus__input">
+                <label for="issued" class="formStatus__label">wystawiona</label>
+            </div>
+            <div class="formStatus__div">
+                <input type="radio" name="status" id="delivered" class="formStatus__input">
+                <label for="delivered" class="formStatus__label">doręczona</label></div>
+            <div class="formStatus__div">
+                <input type="radio" name="status" id="paid" class="formStatus__input">
+                <label for="paid" class="formStatus__label">opłacona</label></div>
+            <div class="formStatus__div">
+                <input type="radio" name="status" id="late" class="formStatus__input">
+                <label for="late" class="formStatus__label">spóźniona</label></div>
+            <div class="formStatus__div">
+                <p class="formStatus__p">Ostatnia zmiana: <span></span></p>
+            </div>
+
+
+
+
         </div>
     </div>
 

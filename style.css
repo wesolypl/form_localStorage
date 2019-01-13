@@ -6,25 +6,117 @@
 
 .wrapper {
     width: 100%;
-    height: 60vh;
-    margin-top: 2%;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Oswald, sans-serif;
+    background-color: #207791;
+    color: white;
+}
+
+.formClient,
+.formCompany,
+.formAmount,
+.formStatus {
+    width: 95%;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: black;
+}
+
+.formClient,
+.formCompany,
+.formAmount {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
-form {
+.formClient__div,
+.formCompany__div {
     display: flex;
-    flex-direction: column;
-    width: 20%;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
 }
 
-form input[type='text'] {
+.formClient h2,
+.formCompany h2,
+.formAmount__label h2,
+.formStatus h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.div_label,
+.div_label {
+    flex-basis: 10%;
+    font-size: 18px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.div__input--postcode {
+    flex-basis: 60%;
+}
+
+.div__input,
+.formAmount__input {
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.div__input {
+    width: 70%;
+}
+
+.formAmount__input {
     width: 100%;
 }
 
-form,
-div>div {
-    border: 1px solid black;
-    padding: 10px;
+.formStatus {
+    display: flex;
+    flex-direction: column;
+}
+
+.formStatus_label {
+    font-size: 18px;
+}
+
+@media(min-width:768px) {
+    .wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .formClient,
+    .formCompany,
+    .formAmount,
+    .formStatus {
+        flex-basis: 45%;
+        display: block;
+
+    }
+}
+
+
+
+@media(min-width:1024px) {
+
+    .formClient,
+    .formCompany,
+    .formAmount,
+    .formStatus {
+        flex-basis: 23%;
+        display: block;
+        min-height: 250px;
+    }
 }
